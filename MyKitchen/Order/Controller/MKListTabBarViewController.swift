@@ -19,73 +19,15 @@ protocol MKListTabBarControllerDelegate
 
 class MKListTabBarViewController: MKBaseViewController {
     
-    var _viewListControllers : Array<UIViewController> = []
-    var viewListControllers : Array<UIViewController>  {
-        get{
-            return _viewListControllers
-        }
-        set(newViewListControllers){
-            btnCount = newViewListControllers.count
-            
-            let oldSelecteViewController : UIViewController? = self.selectedViewController
-            for viewController : UIViewController in _viewListControllers
-            {
-                viewController.willMoveToParentViewController(nil)
-                viewController.removeFromParentViewController()
-            }
-            
-            _viewListControllers = newViewListControllers
-            
-            if  oldSelecteViewController == nil{
-                return
-            }
-            
-            let newIndex : NSInteger = _viewListControllers.indexOf(oldSelecteViewController!)!
-            
-            if newIndex != NSNotFound{
-                self.selectedIndex = newIndex
-            }
-            else if newIndex < _viewListControllers.count{
-                self.selectedIndex = newIndex
-            }else{
-                self.selectedIndex = 0
-            }
-            
-            for viewController : UIViewController in _viewListControllers
-            {
-                self.addChildViewController(viewController)
-                viewController.didMoveToParentViewController(self)
-            }
-            
-            if self.isViewLoaded(){
-                self.reloadTabButtons()
-            }
-        }
-    }
+    internal var _viewListControllers : Array<UIViewController> = []
     
-    var _selectedViewController : UIViewController?
-    var selectedViewController : UIViewController?{
-        get{
-            return _selectedViewController
-        }
-        set(newSelectedViewController){
-            self.selectedViewController(newSelectedViewController!)
-        }
-    }
-    var _selectedIndex : NSInteger = 0
-    var selectedIndex : NSInteger{
-        get{
-            return _selectedIndex
-        }
-        set(newSelectedIndex)
-        {
-            _selectedIndex = newSelectedIndex
-        }
-    }
-    var selectedColor : UIColor?
-    var delegate : MKListTabBarControllerDelegate?
+    internal var _selectedViewController : UIViewController?
 
+    internal var _selectedIndex : NSInteger = 0
     
+    internal var selectedColor : UIColor?
+    internal var delegate : MKListTabBarControllerDelegate?
+
     private var tabButtonsContainerView : UIView?
     private var contentContainerView : UIView?
     private var indicatorView : UIView?
@@ -100,11 +42,11 @@ class MKListTabBarViewController: MKBaseViewController {
         self.edgesForExtendedLayout = UIRectEdge.None
         self.view.autoresizingMask = [UIViewAutoresizing.FlexibleHeight , UIViewAutoresizing.FlexibleWidth]
         var rect : CGRect = CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.tabBarHeight)
+        
         tabButtonsContainerView = UIView(frame: rect)
         tabButtonsContainerView?.backgroundColor = UIColor.whiteColor()
         tabButtonsContainerView?.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         self.view.addSubview(tabButtonsContainerView!)
-        
         
         rect.origin.y = self.tabBarHeight
         rect.size.height = self.view.bounds.size.height - self.tabBarHeight
@@ -125,6 +67,122 @@ class MKListTabBarViewController: MKBaseViewController {
         self.reloadTabButtons()
     }
     
+    internal var viewListControllers : Array<UIViewController>  {
+        get{
+            return _viewListControllers
+        }
+        set{
+            self.SetMKViewListControllers(newValue)
+        }
+    }
+    
+    internal var selectedIndex : NSInteger{
+        get{
+            return _selectedIndex
+        }
+        set{
+            _selectedIndex = newValue
+        }
+    }
+    
+    internal var selectedViewController : UIViewController?{
+        get{
+            if self.selectedIndex != NSNotFound{
+                return self.viewListControllers[self.selectedIndex]
+            }
+            return nil
+        }
+        set{
+            let index : NSInteger = self.viewListControllers.indexOf(newValue!)!
+            
+            if index != NSNotFound{
+                _selectedViewController = self.viewListControllers[0]
+            }
+        }
+    }
+    
+    func clickSelectedIndex(newSelectedIndex : NSInteger){
+        self.clickSelectedIndex(newSelectedIndex, animated: false)
+    }
+
+    func clickSelectedIndex(newSelectedIndex : NSInteger , animated : Bool){
+        let t_tempViewCtr : UIViewController = self.viewListControllers[newSelectedIndex]
+        
+        if  self.delegate?.mk_tabBarController(self, shouldSelectedViewController: t_tempViewCtr, index: newSelectedIndex) == nil {
+            return
+        }
+        
+        if !self.isViewLoaded(){
+            _selectedIndex = newSelectedIndex
+        }
+        else if _selectedIndex != newSelectedIndex{
+            var fromViewCtr : UIViewController?
+            var toViewCtr : UIViewController?
+            
+            if _selectedIndex != NSNotFound{
+                let fromButton = tabButtonsContainerView?.viewWithTag(TagOffset + _selectedIndex) as? UIButton
+                if fromButton == nil{
+                    return
+                }
+                self.deselectTabButton(fromButton!)
+                fromViewCtr = self.selectedViewController
+            }
+            
+            let oldSelectedIndex : NSInteger = self.selectedIndex
+            _selectedIndex = newSelectedIndex
+            
+            var toButton : UIButton?
+            
+            if _selectedIndex != NSNotFound{
+                toButton = tabButtonsContainerView?.viewWithTag(TagOffset + _selectedIndex) as? UIButton
+                self.selectTabButton(toButton!)
+                toViewCtr = self.selectedViewController
+            }
+            
+            if (toViewCtr == nil){
+                fromViewCtr?.view.removeFromSuperview()
+            }
+            else if fromViewCtr == nil{
+                toViewCtr?.view.frame = (contentContainerView?.bounds)!
+                contentContainerView?.addSubview((toViewCtr?.view)!)
+                self.centerIndicatorOnButton(toButton!)
+                
+                self.delegate?.mk_tabBarController(self, didSelecteViewController: toViewCtr!, index: newSelectedIndex)
+            }
+            else{
+                var rect : CGRect  = (contentContainerView?.bounds)!
+                if oldSelectedIndex < newSelectedIndex{
+                    rect.origin.x = rect.size.width
+                }
+                else{
+                    rect.origin.x = -rect.size.width
+                }
+                
+                toViewCtr?.view.frame = rect
+                tabButtonsContainerView?.userInteractionEnabled = false
+                
+                self.transitionFromViewController(fromViewCtr!, toViewController: toViewCtr!, duration: 0.3, options: [UIViewAnimationOptions.LayoutSubviews,UIViewAnimationOptions.CurveEaseOut], animations: { (Void) -> Void in
+                    var rect : CGRect = (fromViewCtr?.view.frame)!
+                    if oldSelectedIndex < newSelectedIndex{
+                        rect.origin.x = -rect.size.width
+                    }
+                    else{
+                        rect.origin.x = rect.size.width
+                    }
+                    fromViewCtr?.view.frame = rect
+                    toViewCtr?.view.frame = (self.contentContainerView?.bounds)!
+                    self.centerIndicatorOnButton(toButton!)
+                    
+                    }, completion: { (Void) -> Void in
+                        self.tabButtonsContainerView?.userInteractionEnabled = true
+                        self.delegate?.mk_tabBarController(self, didSelecteViewController: toViewCtr!, index: newSelectedIndex)
+                })
+
+            }
+            
+        }
+    }
+    
     func viewWillLayOutSubViews()
     {
         super.viewWillLayoutSubviews()
@@ -133,17 +191,14 @@ class MKListTabBarViewController: MKBaseViewController {
     
     override func shouldAutorotate() -> Bool {
         
-        for viewController : UIViewController in self.viewListControllers
-        {
-            if viewController.shouldAutorotate() != true
-            {
+        for viewController : UIViewController in self.viewListControllers{
+            if !viewController.shouldAutorotate() {
                 return false
             }
         }
         return true
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -226,7 +281,7 @@ class MKListTabBarViewController: MKBaseViewController {
     
     func tabButtonPressed(sender : UIButton)
     {
-        self.selectedIndex(sender.tag-TagOffset, animated: true)
+        self.clickSelectedIndex(sender.tag-TagOffset, animated: true)
     }
     
     func selectTabButton(button : UIButton)
@@ -239,33 +294,18 @@ class MKListTabBarViewController: MKBaseViewController {
         button .setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
     }
     
-    func selectedViewController(viewCtr : UIViewController)
+    func SetMKViewListControllers(viewControllers : Array<UIViewController>)
     {
-        self.selecteViewController(viewCtr, animated: false)
-    }
-    
-    func selecteViewController(viewCtr : UIViewController,animated : Bool)
-    {
-        let index : NSInteger = self.viewListControllers.indexOf(viewCtr)!
-        
-        if index != NSNotFound
-        {
-            self.selectedIndex(index, animated: animated)
-        }
-    }
-    
-    func viewListControllers(viewControllers : Array<UIViewController>)
-    {
-        btnCount = viewControllers.count
-        
-        let oldSelecteViewController : UIViewController = _selectedViewController!
-        for viewController : UIViewController in self.viewListControllers
+        for viewController : UIViewController in _viewListControllers
         {
             viewController.willMoveToParentViewController(nil)
             viewController.removeFromParentViewController()
         }
+        _viewListControllers = viewControllers
         
-        self.viewListControllers = viewControllers
+        btnCount = viewControllers.count
+    
+        let oldSelecteViewController : UIViewController = self.selectedViewController!
         
         let newIndex : NSInteger = self.viewListControllers.indexOf(oldSelecteViewController)!
         if newIndex != NSNotFound{
@@ -273,7 +313,8 @@ class MKListTabBarViewController: MKBaseViewController {
         }
         else if newIndex < self.viewListControllers.count{
             self.selectedIndex = newIndex
-        }else{
+        }
+        else{
             self.selectedIndex = 0
         }
         
@@ -286,94 +327,6 @@ class MKListTabBarViewController: MKBaseViewController {
         if self.isViewLoaded(){
             self.reloadTabButtons()
         }
-    }
-    
-    func selectedIndex(index : NSInteger, animated : Bool)
-    {
-        let toViewContro : UIViewController = self.viewListControllers[index]
-        
-        if self.delegate?.mk_tabBarController(self, shouldSelectedViewController: toViewContro, index: index) == nil{
-            return;
-        }
-        
-        if self.isViewLoaded() == false{
-            _selectedIndex = index
-        }
-        else if(_selectedIndex != index)
-        {
-            var fromViewCtr : UIViewController?
-            var toViewCtr : UIViewController?
-            
-            if _selectedIndex != index{
-                let fromButton = tabButtonsContainerView?.viewWithTag(TagOffset + _selectedIndex) as? UIButton
-                if fromButton == nil{
-                    return
-                }
-                self.deselectTabButton(fromButton!)
-                fromViewCtr = self.selectedViewController
-            }
-            
-            let oldSelectedIndex = _selectedIndex
-            
-            _selectedIndex = index
-            
-            var toButton : UIButton?
-            
-            if _selectedIndex != NSNotFound
-            {
-                toButton = tabButtonsContainerView?.viewWithTag(TagOffset + _selectedIndex) as? UIButton
-                self.selectTabButton(toButton!)
-                toViewCtr = self.selectedViewController
-            }
-            
-            if toViewCtr == nil{
-                fromViewCtr?.view.removeFromSuperview()
-            }
-            else if (fromViewCtr == nil){
-                toViewCtr!.view.frame = (contentContainerView?.bounds)!
-                contentContainerView?.addSubview((toViewCtr?.view)!)
-                
-                self.delegate?.mk_tabBarController(self, didSelecteViewController: toViewCtr!, index: index)
-            }
-            else if (animated){
-                var rect : CGRect  = (contentContainerView?.bounds)!
-                if oldSelectedIndex < index{
-                    rect.origin.x = rect.size.width
-                }
-                else{
-                    rect.origin.x = -rect.size.width
-                }
-                
-                toViewCtr?.view.frame = rect
-                tabButtonsContainerView?.userInteractionEnabled = false
-                
-                self.transitionFromViewController(fromViewCtr!, toViewController: toViewCtr!, duration: 0.3, options: [UIViewAnimationOptions.LayoutSubviews,UIViewAnimationOptions.CurveEaseOut], animations: { (Void) -> Void in
-                    var rect : CGRect = (fromViewCtr?.view.frame)!
-                    if oldSelectedIndex < index{
-                        rect.origin.x = -rect.size.width
-                    }
-                    else{
-                        rect.origin.x = rect.size.width
-                    }
-                    fromViewCtr?.view.frame = rect
-                    toViewCtr?.view.frame = (self.contentContainerView?.bounds)!
-                    self.centerIndicatorOnButton(toButton!)
-                    
-                    }, completion: { (Void) -> Void in
-                        self.tabButtonsContainerView?.userInteractionEnabled = true
-                        self.delegate?.mk_tabBarController(self, didSelecteViewController: toViewCtr!, index: index)
-                })
-            }
-            else{
-                fromViewCtr?.view.removeFromSuperview()
-                
-                toViewCtr?.view.frame = (contentContainerView?.bounds)!
-                contentContainerView?.addSubview((toViewCtr?.view)!)
-                self.centerIndicatorOnButton(toButton!)
-                self.delegate?.mk_tabBarController(self, didSelecteViewController: toViewCtr!, index: index)
-            }
-        }
-        
     }
     
     func centerIndicatorOnButton(button : UIButton)

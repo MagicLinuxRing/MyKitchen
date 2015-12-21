@@ -35,8 +35,6 @@ class MKMyOrderTabBarViewController: MKListTabBarViewController,MKListTabBarCont
         // Dispose of any resources that can be recreated.
     }
     
-    
-
     func mk_tabBarController(tabBarController: MKListTabBarViewController, didSelecteViewController: UIViewController, index: NSInteger) {
         self.selectedIndex = index
     }

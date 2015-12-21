@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142F44F4CF3CEECF8101DEB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBBD5875183EDF14EB94232 /* libPods.a */; };
 		1D633BBC1C216FD00068E44D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D633BBB1C216FD00068E44D /* AppDelegate.swift */; };
 		1D633BC11C216FD00068E44D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D633BBF1C216FD00068E44D /* Main.storyboard */; };
 		1D633BC31C216FD00068E44D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D633BC21C216FD00068E44D /* Assets.xcassets */; };
@@ -36,6 +37,10 @@
 		1D67953C1C22D42100A37A83 /* MKListTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67953B1C22D42100A37A83 /* MKListTabBarViewController.swift */; };
 		1D67953E1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67953D1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift */; };
 		1D6795421C23E48F00A37A83 /* MKEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6795411C23E48F00A37A83 /* MKEnum.swift */; };
+		1DC5C56D1C28048B00DAACB1 /* MKLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C56C1C28048B00DAACB1 /* MKLoginViewController.swift */; };
+		1DC5C56F1C28049800DAACB1 /* MKRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C56E1C28049800DAACB1 /* MKRegisterViewController.swift */; };
+		1DC5C5711C2804AB00DAACB1 /* MKFindPswViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C5701C2804AB00DAACB1 /* MKFindPswViewController.swift */; };
+		1DC5C5731C2804C100DAACB1 /* MKFindPswDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C5721C2804C100DAACB1 /* MKFindPswDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E031E36EF425C5546E46AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1D633BB81C216FD00068E44D /* MyKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D633BBB1C216FD00068E44D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D633BC01C216FD00068E44D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +98,12 @@
 		1D67953D1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMyOrderTabBarViewController.swift; sourceTree = "<group>"; };
 		1D6795411C23E48F00A37A83 /* MKEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKEnum.swift; sourceTree = "<group>"; };
 		1D6795431C24048B00A37A83 /* MyKitchen-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyKitchen-Bridging-Header.h"; sourceTree = "<group>"; };
+		1DC5C56C1C28048B00DAACB1 /* MKLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLoginViewController.swift; sourceTree = "<group>"; };
+		1DC5C56E1C28049800DAACB1 /* MKRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRegisterViewController.swift; sourceTree = "<group>"; };
+		1DC5C5701C2804AB00DAACB1 /* MKFindPswViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKFindPswViewController.swift; sourceTree = "<group>"; };
+		1DC5C5721C2804C100DAACB1 /* MKFindPswDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKFindPswDetailViewController.swift; sourceTree = "<group>"; };
+		2DBBD5875183EDF14EB94232 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		850BEE8113234BEB658DC36C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142F44F4CF3CEECF8101DEB9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +139,8 @@
 				1D633BCF1C216FD00068E44D /* MyKitchenTests */,
 				1D633BDA1C216FD00068E44D /* MyKitchenUITests */,
 				1D633BB91C216FD00068E44D /* Products */,
+				97CE7D79E649EE7C6530DC9C /* Pods */,
+				20019A19E7EA0E6C1903B690 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,6 +257,8 @@
 			children = (
 				1D6795201C22981600A37A83 /* Profile.storyboard */,
 				1D6795311C229B0400A37A83 /* Controller */,
+				1DC5C5611C2802B100DAACB1 /* View */,
+				1DC5C5601C2802A200DAACB1 /* Model */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -293,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6795321C229B1000A37A83 /* MKProfileViewController.swift */,
+				1DC5C5621C2802DF00DAACB1 /* LoginVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -314,6 +332,64 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		1DC5C5601C2802A200DAACB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DC5C5631C2802F100DAACB1 /* LoginModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DC5C5611C2802B100DAACB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DC5C5641C2802FD00DAACB1 /* LoginView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DC5C5621C2802DF00DAACB1 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				1DC5C56C1C28048B00DAACB1 /* MKLoginViewController.swift */,
+				1DC5C56E1C28049800DAACB1 /* MKRegisterViewController.swift */,
+				1DC5C5701C2804AB00DAACB1 /* MKFindPswViewController.swift */,
+				1DC5C5721C2804C100DAACB1 /* MKFindPswDetailViewController.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		1DC5C5631C2802F100DAACB1 /* LoginModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginModel;
+			sourceTree = "<group>";
+		};
+		1DC5C5641C2802FD00DAACB1 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		20019A19E7EA0E6C1903B690 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DBBD5875183EDF14EB94232 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97CE7D79E649EE7C6530DC9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				850BEE8113234BEB658DC36C /* Pods.debug.xcconfig */,
+				01E031E36EF425C5546E46AB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,9 +397,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D633BE01C216FD00068E44D /* Build configuration list for PBXNativeTarget "MyKitchen" */;
 			buildPhases = (
+				E5F6CE8C30683F3012AF894A /* Check Pods Manifest.lock */,
 				1D633BB41C216FD00068E44D /* Sources */,
 				1D633BB51C216FD00068E44D /* Frameworks */,
 				1D633BB61C216FD00068E44D /* Resources */,
+				E36F926B6D14B6D78DF37196 /* Embed Pods Frameworks */,
+				FD58E680093007B3387856C8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,6 +528,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E36F926B6D14B6D78DF37196 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5F6CE8C30683F3012AF894A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD58E680093007B3387856C8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D633BB41C216FD00068E44D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -459,6 +586,7 @@
 				1D633BBC1C216FD00068E44D /* AppDelegate.swift in Sources */,
 				1D67953E1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift in Sources */,
 				1D6795421C23E48F00A37A83 /* MKEnum.swift in Sources */,
+				1DC5C5731C2804C100DAACB1 /* MKFindPswDetailViewController.swift in Sources */,
 				1D6795301C229AF400A37A83 /* MKOrderViewController.swift in Sources */,
 				1D67953C1C22D42100A37A83 /* MKListTabBarViewController.swift in Sources */,
 				1D633BF11C2171550068E44D /* MKBaseViewController.swift in Sources */,
@@ -469,7 +597,10 @@
 				1D6795271C229A9200A37A83 /* MKHomeViewController.swift in Sources */,
 				1D67953A1C22A1FB00A37A83 /* MKLoaderViewManager.swift in Sources */,
 				1D6795361C229B2D00A37A83 /* MKSettingViewController.swift in Sources */,
+				1DC5C56D1C28048B00DAACB1 /* MKLoginViewController.swift in Sources */,
+				1DC5C5711C2804AB00DAACB1 /* MKFindPswViewController.swift in Sources */,
 				1D67952D1C229AD700A37A83 /* MKCartsViewController.swift in Sources */,
+				1DC5C56F1C28049800DAACB1 /* MKRegisterViewController.swift in Sources */,
 				1D6795331C229B1000A37A83 /* MKProfileViewController.swift in Sources */,
 				1D67952A1C229ABC00A37A83 /* FileterViewController.swift in Sources */,
 			);
@@ -611,6 +742,7 @@
 		};
 		1D633BE11C216FD00068E44D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 850BEE8113234BEB658DC36C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -626,6 +758,7 @@
 		};
 		1D633BE21C216FD00068E44D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E031E36EF425C5546E46AB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
