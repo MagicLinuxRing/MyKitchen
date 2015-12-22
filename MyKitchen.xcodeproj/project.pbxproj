@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		142F44F4CF3CEECF8101DEB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBBD5875183EDF14EB94232 /* libPods.a */; };
 		1D633BBC1C216FD00068E44D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D633BBB1C216FD00068E44D /* AppDelegate.swift */; };
 		1D633BC11C216FD00068E44D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D633BBF1C216FD00068E44D /* Main.storyboard */; };
 		1D633BC31C216FD00068E44D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D633BC21C216FD00068E44D /* Assets.xcassets */; };
@@ -37,10 +36,14 @@
 		1D67953C1C22D42100A37A83 /* MKListTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67953B1C22D42100A37A83 /* MKListTabBarViewController.swift */; };
 		1D67953E1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67953D1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift */; };
 		1D6795421C23E48F00A37A83 /* MKEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6795411C23E48F00A37A83 /* MKEnum.swift */; };
+		1D8A3CB61C28F267001344B2 /* MKBaseWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */; };
+		1D8A3CB81C2917B1001344B2 /* MKGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */; };
+		1D8A3CBA1C2956D7001344B2 /* MKBaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */; };
 		1DC5C56D1C28048B00DAACB1 /* MKLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C56C1C28048B00DAACB1 /* MKLoginViewController.swift */; };
 		1DC5C56F1C28049800DAACB1 /* MKRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C56E1C28049800DAACB1 /* MKRegisterViewController.swift */; };
 		1DC5C5711C2804AB00DAACB1 /* MKFindPswViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C5701C2804AB00DAACB1 /* MKFindPswViewController.swift */; };
 		1DC5C5731C2804C100DAACB1 /* MKFindPswDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C5721C2804C100DAACB1 /* MKFindPswDetailViewController.swift */; };
+		6E66D26AF629C281C9B95930 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 597F531B1121132DF9350AA9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,11 +101,14 @@
 		1D67953D1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMyOrderTabBarViewController.swift; sourceTree = "<group>"; };
 		1D6795411C23E48F00A37A83 /* MKEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKEnum.swift; sourceTree = "<group>"; };
 		1D6795431C24048B00A37A83 /* MyKitchen-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyKitchen-Bridging-Header.h"; sourceTree = "<group>"; };
+		1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseWebService.swift; sourceTree = "<group>"; };
+		1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGlobalHeader.swift; sourceTree = "<group>"; };
+		1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseAccess.swift; sourceTree = "<group>"; };
 		1DC5C56C1C28048B00DAACB1 /* MKLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLoginViewController.swift; sourceTree = "<group>"; };
 		1DC5C56E1C28049800DAACB1 /* MKRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRegisterViewController.swift; sourceTree = "<group>"; };
 		1DC5C5701C2804AB00DAACB1 /* MKFindPswViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKFindPswViewController.swift; sourceTree = "<group>"; };
 		1DC5C5721C2804C100DAACB1 /* MKFindPswDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKFindPswDetailViewController.swift; sourceTree = "<group>"; };
-		2DBBD5875183EDF14EB94232 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		597F531B1121132DF9350AA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		850BEE8113234BEB658DC36C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				142F44F4CF3CEECF8101DEB9 /* libPods.a in Frameworks */,
+				6E66D26AF629C281C9B95930 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				1D633BF51C2172230068E44D /* MKObject.swift */,
+				1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */,
+				1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */,
 				1D633BF71C21727D0068E44D /* MKViewControllerManager.swift */,
 				1D6795391C22A1FB00A37A83 /* MKLoaderViewManager.swift */,
 			);
@@ -327,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6795411C23E48F00A37A83 /* MKEnum.swift */,
+				1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */,
 				1D6795431C24048B00A37A83 /* MyKitchen-Bridging-Header.h */,
 			);
 			path = Common;
@@ -376,7 +385,7 @@
 		20019A19E7EA0E6C1903B690 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2DBBD5875183EDF14EB94232 /* libPods.a */,
+				597F531B1121132DF9350AA9 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -581,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8A3CBA1C2956D7001344B2 /* MKBaseAccess.swift in Sources */,
 				1D633BF61C2172230068E44D /* MKObject.swift in Sources */,
 				1D633BEB1C2171050068E44D /* MkBaseTabBarViewController.swift in Sources */,
 				1D633BBC1C216FD00068E44D /* AppDelegate.swift in Sources */,
@@ -590,6 +600,7 @@
 				1D6795301C229AF400A37A83 /* MKOrderViewController.swift in Sources */,
 				1D67953C1C22D42100A37A83 /* MKListTabBarViewController.swift in Sources */,
 				1D633BF11C2171550068E44D /* MKBaseViewController.swift in Sources */,
+				1D8A3CB61C28F267001344B2 /* MKBaseWebService.swift in Sources */,
 				1D633BEF1C2171460068E44D /* MKBaseTableViewController.swift in Sources */,
 				1D633BED1C2171320068E44D /* MKBaseNavViewController.swift in Sources */,
 				1D633BF31C2171720068E44D /* MKBaseCollectionViewController.swift in Sources */,
@@ -597,6 +608,7 @@
 				1D6795271C229A9200A37A83 /* MKHomeViewController.swift in Sources */,
 				1D67953A1C22A1FB00A37A83 /* MKLoaderViewManager.swift in Sources */,
 				1D6795361C229B2D00A37A83 /* MKSettingViewController.swift in Sources */,
+				1D8A3CB81C2917B1001344B2 /* MKGlobalHeader.swift in Sources */,
 				1DC5C56D1C28048B00DAACB1 /* MKLoginViewController.swift in Sources */,
 				1DC5C5711C2804AB00DAACB1 /* MKFindPswViewController.swift in Sources */,
 				1D67952D1C229AD700A37A83 /* MKCartsViewController.swift in Sources */,

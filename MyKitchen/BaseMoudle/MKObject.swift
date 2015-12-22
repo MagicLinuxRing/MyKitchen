@@ -10,4 +10,8 @@ import UIKit
 
 class MKObject: NSObject {
     
+    required override init() {
+        super.init()
+    }
+    
 }
