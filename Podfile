@@ -4,6 +4,8 @@ platform:ios,"8.0"
 
 pod "AFNetworking"
 #pod "Alamofire"
+pod "MJRefresh"
+pod "MJExtension"
 
 target 'MyKitchen' do
 

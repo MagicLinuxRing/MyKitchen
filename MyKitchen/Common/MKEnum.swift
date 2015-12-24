@@ -33,6 +33,14 @@ public enum MKOrderStatus : NSInteger{
     case MKOrderStatusPayOnDeliverUnReceipt = 12 // 待收货 货到付款
 }
 
+public enum MKErrorCode : Int{
+    case RemindErrorCode = -10000 // 提醒错误
+    case ServiceErrorCode = -10001 // 服务器错误
+    case LocalErrorCode = -10002 // 本地错误
+    case NetworkErrorCode = -10003 // 网络错误
+    case CrashErrorCode = -10004 // 崩溃错误
+}
+
 public func MAX(A : float_t , B : float_t) -> Bool{
     return A>B
 }

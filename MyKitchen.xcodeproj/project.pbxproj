@@ -39,6 +39,9 @@
 		1D8A3CB61C28F267001344B2 /* MKBaseWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */; };
 		1D8A3CB81C2917B1001344B2 /* MKGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */; };
 		1D8A3CBA1C2956D7001344B2 /* MKBaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */; };
+		1D8A3CBF1C2A9A8C001344B2 /* MKLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CBE1C2A9A8C001344B2 /* MKLoginManager.swift */; };
+		1D8A3CC11C2A9DEE001344B2 /* MKBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CC01C2A9DEE001344B2 /* MKBaseModel.swift */; };
+		1D8A3CC31C2AA742001344B2 /* MKLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CC21C2AA742001344B2 /* MKLoginModel.swift */; };
 		1DC5C56D1C28048B00DAACB1 /* MKLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C56C1C28048B00DAACB1 /* MKLoginViewController.swift */; };
 		1DC5C56F1C28049800DAACB1 /* MKRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C56E1C28049800DAACB1 /* MKRegisterViewController.swift */; };
 		1DC5C5711C2804AB00DAACB1 /* MKFindPswViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5C5701C2804AB00DAACB1 /* MKFindPswViewController.swift */; };
@@ -104,6 +107,9 @@
 		1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseWebService.swift; sourceTree = "<group>"; };
 		1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGlobalHeader.swift; sourceTree = "<group>"; };
 		1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseAccess.swift; sourceTree = "<group>"; };
+		1D8A3CBE1C2A9A8C001344B2 /* MKLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLoginManager.swift; sourceTree = "<group>"; };
+		1D8A3CC01C2A9DEE001344B2 /* MKBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseModel.swift; sourceTree = "<group>"; };
+		1D8A3CC21C2AA742001344B2 /* MKLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLoginModel.swift; sourceTree = "<group>"; };
 		1DC5C56C1C28048B00DAACB1 /* MKLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLoginViewController.swift; sourceTree = "<group>"; };
 		1DC5C56E1C28049800DAACB1 /* MKRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRegisterViewController.swift; sourceTree = "<group>"; };
 		1DC5C5701C2804AB00DAACB1 /* MKFindPswViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKFindPswViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 				1D633BF51C2172230068E44D /* MKObject.swift */,
 				1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */,
 				1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */,
+				1D8A3CC01C2A9DEE001344B2 /* MKBaseModel.swift */,
 				1D633BF71C21727D0068E44D /* MKViewControllerManager.swift */,
 				1D6795391C22A1FB00A37A83 /* MKLoaderViewManager.swift */,
 			);
@@ -263,6 +270,7 @@
 		1D67951F1C22980B00A37A83 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				1D8A3CBD1C2A9A8C001344B2 /* Manager */,
 				1D6795201C22981600A37A83 /* Profile.storyboard */,
 				1D6795311C229B0400A37A83 /* Controller */,
 				1DC5C5611C2802B100DAACB1 /* View */,
@@ -341,6 +349,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		1D8A3CBD1C2A9A8C001344B2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1D8A3CBE1C2A9A8C001344B2 /* MKLoginManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		1DC5C5601C2802A200DAACB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +387,7 @@
 		1DC5C5631C2802F100DAACB1 /* LoginModel */ = {
 			isa = PBXGroup;
 			children = (
+				1D8A3CC21C2AA742001344B2 /* MKLoginModel.swift */,
 			);
 			path = LoginModel;
 			sourceTree = "<group>";
@@ -602,15 +619,18 @@
 				1D633BF11C2171550068E44D /* MKBaseViewController.swift in Sources */,
 				1D8A3CB61C28F267001344B2 /* MKBaseWebService.swift in Sources */,
 				1D633BEF1C2171460068E44D /* MKBaseTableViewController.swift in Sources */,
+				1D8A3CC11C2A9DEE001344B2 /* MKBaseModel.swift in Sources */,
 				1D633BED1C2171320068E44D /* MKBaseNavViewController.swift in Sources */,
 				1D633BF31C2171720068E44D /* MKBaseCollectionViewController.swift in Sources */,
 				1D633BF81C21727D0068E44D /* MKViewControllerManager.swift in Sources */,
 				1D6795271C229A9200A37A83 /* MKHomeViewController.swift in Sources */,
 				1D67953A1C22A1FB00A37A83 /* MKLoaderViewManager.swift in Sources */,
 				1D6795361C229B2D00A37A83 /* MKSettingViewController.swift in Sources */,
+				1D8A3CBF1C2A9A8C001344B2 /* MKLoginManager.swift in Sources */,
 				1D8A3CB81C2917B1001344B2 /* MKGlobalHeader.swift in Sources */,
 				1DC5C56D1C28048B00DAACB1 /* MKLoginViewController.swift in Sources */,
 				1DC5C5711C2804AB00DAACB1 /* MKFindPswViewController.swift in Sources */,
+				1D8A3CC31C2AA742001344B2 /* MKLoginModel.swift in Sources */,
 				1D67952D1C229AD700A37A83 /* MKCartsViewController.swift in Sources */,
 				1DC5C56F1C28049800DAACB1 /* MKRegisterViewController.swift in Sources */,
 				1D6795331C229B1000A37A83 /* MKProfileViewController.swift in Sources */,
