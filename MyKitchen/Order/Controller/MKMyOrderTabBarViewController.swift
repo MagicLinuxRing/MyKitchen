@@ -12,6 +12,14 @@ class MKMyOrderTabBarViewController: MKListTabBarViewController,MKListTabBarCont
 
     var orderStatus : MKOrderStatus?
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !MKGlobalHeader.defaultInstance().isLogin(){
+            let loginVC = MKLoaderViewManager.loginViewController()
+            self.navigationController!.pushViewController(loginVC, animated: true)
+        }
+    }
     
     override func viewDidLoad() {
         let titles : Array<String> = ["全部","待付款","待收货","待评价"]

@@ -14,6 +14,10 @@ class MKLoaderViewManager: MKObject {
         return self.orderStoryBoard.instantiateViewControllerWithIdentifier("OrderDetail") as! MKOrderViewController
     }
     
+    class func loginViewController() -> MKLoginViewController {
+        return self.proFileStoryBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! MKLoginViewController
+    }
+    
     class var homePageViewController : UIStoryboard {
         struct HomePage {
             static var onceToken : dispatch_once_t = 0

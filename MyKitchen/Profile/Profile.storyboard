@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KC7-EU-R7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="373" y="151"/>
+            <point key="canvasLocation" x="1069" y="107"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="SZm-Bj-Ggv">
@@ -38,12 +38,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpJ-nQ-amN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147" y="163"/>
+            <point key="canvasLocation" x="1843" y="119"/>
         </scene>
         <!--登录-->
         <scene sceneID="NpY-Gl-cDL">
             <objects>
-                <viewController storyboardIdentifier="WCLogInViewController" id="mxa-pA-mg2" customClass="MKLoginViewController" customModule="MyKitchen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="mxa-pA-mg2" customClass="MKLoginViewController" customModule="MyKitchen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RAh-gM-843"/>
                         <viewControllerLayoutGuide type="bottom" id="YZe-EK-nlu"/>
@@ -233,7 +233,7 @@
         <!--找回密码-->
         <scene sceneID="RIu-LL-X6I">
             <objects>
-                <viewController id="Mxd-UW-iJS" customClass="MKFindPswViewController" customModule="MyKitchen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindPasswordView" id="Mxd-UW-iJS" customClass="MKFindPswViewController" customModule="MyKitchen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JqA-9f-HyF"/>
                         <viewControllerLayoutGuide type="bottom" id="E5A-9D-6nf"/>
@@ -387,7 +387,7 @@
         <!--找回密码-->
         <scene sceneID="00N-cF-HIf">
             <objects>
-                <viewController id="f2Z-Xc-0Nf" customClass="MKFindPswDetailViewController" customModule="MyKitchen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindPsDetail" id="f2Z-Xc-0Nf" customClass="MKFindPswDetailViewController" customModule="MyKitchen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cgx-ZH-PTs"/>
                         <viewControllerLayoutGuide type="bottom" id="hXg-Rf-bRR"/>
@@ -485,7 +485,7 @@
         <!--注册-->
         <scene sceneID="gyY-XI-tOE">
             <objects>
-                <viewController id="EDs-gz-32f" customClass="MKRegisterViewController" customModule="MyKitchen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterView" id="EDs-gz-32f" customClass="MKRegisterViewController" customModule="MyKitchen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7dh-eM-ge0"/>
                         <viewControllerLayoutGuide type="bottom" id="S1F-og-fu7"/>

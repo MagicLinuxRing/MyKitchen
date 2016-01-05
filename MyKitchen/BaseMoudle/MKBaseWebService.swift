@@ -40,7 +40,7 @@ class MKBaseWebService: MKObject {
         _manager?.requestSerializer = AFJSONRequestSerializer(writingOptions: .PrettyPrinted)
         _manager?.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript", "text/html") as? Set<String>
         _manager?.requestSerializer.timeoutInterval = 20
-        _manager?.responseSerializer.acceptableStatusCodes = NSIndexSet(indexesInRange: NSMakeRange(200,200))
+        _manager?.responseSerializer.acceptableStatusCodes = NSIndexSet(indexesInRange: NSMakeRange(200,220))
         _manager?.securityPolicy = AFSecurityPolicy(pinningMode: .None)
         
         _JSONRequestSerializer = AFJSONRequestSerializer(writingOptions: .PrettyPrinted)
@@ -55,7 +55,7 @@ class MKBaseWebService: MKObject {
             static var instance : MKBaseWebService? = nil
         }
         dispatch_once(&baseWebService.onceToken) { () -> Void in
-            baseWebService.instance = MKBaseWebService()
+            baseWebService.instance = MKBaseWebService.init()
         }
         return baseWebService.instance!
     }

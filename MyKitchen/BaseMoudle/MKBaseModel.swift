@@ -9,20 +9,9 @@
 import UIKit
 
 class MKBaseModel: MKObject {
-    internal var ID : Int64?
-    internal var count : Int64?
-    internal var enabled : Bool
-    
-    required init(ID : Int64) {
-        super.init()
-        self.ID = ID
-        self.count = 0
-        self.enabled = true
-    }
-
-    required init() {
-        fatalError("init() has not been implemented")
-    }
+    internal var ID : Int64? = 0
+    internal var count : Int64? = 0
+    internal var enabled : Bool = true
     
     class func replaceKeyFromPropertyName() ->[String : String] {
         return ["ID":"id"]

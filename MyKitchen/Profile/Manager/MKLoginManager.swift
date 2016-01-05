@@ -82,18 +82,18 @@ class MKLoginManager: MKBaseAccess {
     
     //登录
     class func getLoginWithAccount(account : String ,_ passwd : String,_ clientId : String?,_ grantType : String?,_ action : MKLoginAction) {
-        var parmaters : Dictionary<String,AnyObject>?
-        parmaters!["grant_type"] = "password"
-        parmaters!["UserName"] = account
-        parmaters!["password"] = passwd
+        var parmaters = Dictionary<String,AnyObject>()
+        parmaters["grant_type"] = "password"
+        parmaters["UserName"] = account
+        parmaters["password"] = passwd
         self.requestForHttpSerializer()
         
-        self.POST("token", parameters: parmaters!) { (task :NSURLSessionDataTask, response : AnyObject?, error : NSError?) -> () in
+        self.POST("token", parameters: parmaters) { (task :NSURLSessionDataTask, response : AnyObject?, error : NSError?) -> () in
             if  error != nil{
                 action(loginModel: nil, error: error)
             }
             else{
-                let loginModel :  MKLoginModel = MKLoginModel.mj_objectWithKeyValues(response!["data"])
+                let loginModel :  MKLoginModel = MKLoginModel.mj_objectWithKeyValues(response as! NSDictionary)
                 action(loginModel: loginModel, error: nil)
             }
         }

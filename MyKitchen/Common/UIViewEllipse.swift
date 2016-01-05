@@ -21,16 +21,19 @@ extension UIView{
     }
 }
 
+internal var text_maxLength : NSInteger = 0
+
 extension UITextField{
-    func setMaxLength(maxLength : NSInteger){
-        objc_setAssociatedObject(self, UITextFiled_Master_maxLength, NSNumber(integer: maxLength), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        self.removeTarget(self, action: "MasterTextFieldChange:", forControlEvents: UIControlEvents.EditingChanged)
-        self.addTarget(self, action: "MasterTextFieldChange:", forControlEvents: UIControlEvents.EditingChanged)
-    }
     
-    func maxLength() -> NSInteger{
-        let maxLength = objc_getAssociatedObject(self, UITextFiled_Master_maxLength)
-        return maxLength.integerValue
+    var maxLength : NSInteger{
+        get{
+            return (objc_getAssociatedObject(self, &text_maxLength) as? NSInteger)!
+        }
+        set(newValue){
+            objc_setAssociatedObject(self, &text_maxLength, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.removeTarget(self, action: "MasterTextFieldChange:", forControlEvents: UIControlEvents.EditingChanged)
+            self.addTarget(self, action: "MasterTextFieldChange:", forControlEvents: UIControlEvents.EditingChanged)
+        }
     }
     
     func setDigitsCharts(digitsCharts : Array<String>){
@@ -57,10 +60,10 @@ extension UITextField{
             }
         }
         
-        if self.maxLength() > 0{
+        if self.maxLength > 0{
             if textField.markedTextRange == nil &&
-                textField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > self.maxLength(){
-                    textField.text? = (textField.text! as NSString).substringToIndex(self.maxLength())
+                textField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > self.maxLength{
+                    textField.text? = (textField.text! as NSString).substringToIndex(self.maxLength)
             }
         }
     }
