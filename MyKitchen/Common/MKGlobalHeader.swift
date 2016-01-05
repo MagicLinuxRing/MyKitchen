@@ -22,8 +22,6 @@ func URLBASE() -> String{
 
 class MKGlobalHeader : MKObject{
     
-    
-    
     class func defaultInstance() ->MKGlobalHeader {
         struct globalHeader{
             static var onceToken : dispatch_once_t = 0
@@ -38,6 +36,44 @@ class MKGlobalHeader : MKObject{
     
     func accessToken() -> String?{
         return NSUserDefaults.standardUserDefaults().objectForKey("token") as? String
+    }
+    
+    func saveLoginUser(loginUser : Dictionary<String,AnyObject>?){
+        if loginUser != nil{
+            NSUserDefaults.standardUserDefaults().setObject(loginUser!, forKey: "autoLoginData")
+        }
+        else{
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("autoLoginData")
+        }
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func getLoginUser() ->Dictionary<String,AnyObject>{
+        return NSUserDefaults.standardUserDefaults().objectForKey("autoLoginData") as! Dictionary
+    }
+    
+    func setLoginInfoData(info : AnyObject?){
+        if info != nil{
+            let token = "bearer".stringByAppendingString(info as! String)
+            NSUserDefaults.standardUserDefaults().setObject(token, forKey: "token")
+        }
+        else{
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
+        }
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func checkNetworkState() -> Bool{
+        let wifi = Reachability.reachabilityForLocalWiFi()
+        let conn = Reachability.reachabilityForInternetConnection()
+        
+        if wifi.currentReachabilityStatus() != NotReachable {
+            return true
+        }
+        else if conn.currentReachabilityStatus() != NotReachable {
+            return true
+        }
+        return false
     }
 }
 

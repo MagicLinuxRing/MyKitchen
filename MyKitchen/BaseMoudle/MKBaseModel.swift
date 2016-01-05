@@ -14,10 +14,10 @@ class MKBaseModel: MKObject {
     internal var enabled : Bool
     
     required init(ID : Int64) {
+        super.init()
         self.ID = ID
         self.count = 0
         self.enabled = true
-        super.init()
     }
 
     required init() {

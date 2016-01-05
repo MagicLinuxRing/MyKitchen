@@ -9,12 +9,23 @@
 import UIKit
 
 class MKBaseViewController: UIViewController {
+    
+    var page : NSInteger = 0
+    var appGlobal : MKGlobalHeader?
+    
+    var emptyView : UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.page = 1;
+        self.appGlobal = MKGlobalHeader.defaultInstance()
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        RSProgressHUD.dismiss()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

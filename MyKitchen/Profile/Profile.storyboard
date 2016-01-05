@@ -160,7 +160,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="doLogInAction:" destination="mxa-pA-mg2" eventType="touchUpInside" id="YKS-3q-liS"/>
+                                    <action selector="doLoginAction:" destination="mxa-pA-mg2" eventType="touchUpInside" id="PE9-st-Zti"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd2-WT-TnO">
@@ -175,7 +175,7 @@
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="doRegisterAction:" destination="mxa-pA-mg2" eventType="touchUpInside" id="cIF-sv-N9u"/>
+                                    <action selector="doRegisterAction:" destination="mxa-pA-mg2" eventType="touchUpInside" id="XzW-4z-FVR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrK-gy-d5b">
@@ -189,7 +189,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="doFindPasswordAction:" destination="mxa-pA-mg2" eventType="touchUpInside" id="ihh-FF-duw"/>
+                                    <action selector="doFindPasswordAction:" destination="mxa-pA-mg2" eventType="touchUpInside" id="BJ0-7H-SPW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -210,7 +210,7 @@
                     <navigationItem key="navigationItem" title="登录" id="aWq-yS-YBj">
                         <barButtonItem key="leftBarButtonItem" title="返回" id="el3-IM-KsS">
                             <connections>
-                                <action selector="goBack" destination="mxa-pA-mg2" id="Bmt-pa-Ezd"/>
+                                <action selector="goBack:" destination="mxa-pA-mg2" id="3Zv-Ix-zol"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -218,10 +218,10 @@
                         <outlet property="accountTextField" destination="gGe-MZ-dof" id="0g2-93-I2c"/>
                         <outlet property="passwordTextField" destination="O2s-HQ-3Rd" id="HrF-o7-DnL"/>
                         <outlet property="registerBtn" destination="qd2-WT-TnO" id="xaB-HG-PIg"/>
-                        <segue destination="EDs-gz-32f" kind="show" identifier="WCRegisterVC" id="Zhv-jG-xEU">
+                        <segue destination="EDs-gz-32f" kind="show" identifier="MKRegisterVC" id="Zhv-jG-xEU">
                             <nil key="action"/>
                         </segue>
-                        <segue destination="Mxd-UW-iJS" kind="show" identifier="WCFindPasswordVC" id="bQN-rO-y0L">
+                        <segue destination="Mxd-UW-iJS" kind="show" identifier="MKFindPasswordVC" id="bQN-rO-y0L">
                             <nil key="action"/>
                         </segue>
                     </connections>

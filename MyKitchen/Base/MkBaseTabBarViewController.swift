@@ -27,7 +27,7 @@ class MkBaseTabBarViewController: UITabBarController {
             VC.tabBarItem = UITabBarItem.init(title: VC.title, image: UIImage(named: imageNames[index] as! String), selectedImage: UIImage(named: selectedImageNames[index] as! String))
         }
         self.tabBar.tintColor = RGB(86, G: 186, B: 66, alpha: 1.0)
-        self.tabBar.selectedImageTintColor = RGB(86, G: 186, B: 66, alpha: 1.0)
+//        self.tabBar.selectedImageTintColor = RGB(86, G: 186, B: 66, alpha: 1.0)
         self.selectedIndex = 0;
     }
 
