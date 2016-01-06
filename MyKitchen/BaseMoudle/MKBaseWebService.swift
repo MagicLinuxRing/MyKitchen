@@ -60,7 +60,7 @@ class MKBaseWebService: MKObject {
         return baseWebService.instance!
     }
     
-    func baseURL() ->String{
+    class func baseURL() ->String{
         return MKBaseConnectorAddress
     }
     

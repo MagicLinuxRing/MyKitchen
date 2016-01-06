@@ -62,6 +62,13 @@ class MKGlobalHeader : MKObject{
         super.init()
     }
     
+    class func getUUID() ->String {
+        let puuid = CFUUIDCreate(nil)
+        let uuidString = CFUUIDCreateString(nil, puuid)
+        let result : String = CFStringCreateCopy(nil, uuidString) as String
+        return result
+    }
+    
     func accessToken() -> String?{
         return NSUserDefaults.standardUserDefaults().objectForKey("token") as? String
     }

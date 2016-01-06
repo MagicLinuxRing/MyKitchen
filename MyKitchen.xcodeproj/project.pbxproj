@@ -45,6 +45,13 @@
 		1D8967B51C3A4C9900998655 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967B41C3A4C9900998655 /* Reachability.m */; };
 		1D8967BD1C3A527300998655 /* NSError+WC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967BC1C3A527300998655 /* NSError+WC.m */; };
 		1D8967C01C3A9CA500998655 /* UIViewEllipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967BF1C3A9CA500998655 /* UIViewEllipse.swift */; };
+		1D8967C21C3CBE5B00998655 /* MKUnderLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967C11C3CBE5B00998655 /* MKUnderLineLabel.swift */; };
+		1D8967C41C3CC5E800998655 /* MKSeparateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967C31C3CC5E800998655 /* MKSeparateView.swift */; };
+		1D8967C91C3CF76400998655 /* MKBaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967C81C3CF76400998655 /* MKBaseDataManager.swift */; };
+		1D8967CB1C3D088500998655 /* MKRegisterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967CA1C3D088500998655 /* MKRegisterDataManager.swift */; };
+		1D8967CD1C3D0B7100998655 /* MKThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967CC1C3D0B7100998655 /* MKThread.swift */; };
+		1D8967CF1C3D13AD00998655 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967CE1C3D13AD00998655 /* StringExtention.swift */; };
+		1D8967D11C3D200700998655 /* MKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967D01C3D200700998655 /* MKWebViewController.swift */; };
 		1D8A3CB61C28F267001344B2 /* MKBaseWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */; };
 		1D8A3CB81C2917B1001344B2 /* MKGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */; };
 		1D8A3CBA1C2956D7001344B2 /* MKBaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */; };
@@ -130,6 +137,13 @@
 		1D8967BB1C3A527300998655 /* NSError+WC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+WC.h"; sourceTree = "<group>"; };
 		1D8967BC1C3A527300998655 /* NSError+WC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+WC.m"; sourceTree = "<group>"; };
 		1D8967BF1C3A9CA500998655 /* UIViewEllipse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewEllipse.swift; sourceTree = "<group>"; };
+		1D8967C11C3CBE5B00998655 /* MKUnderLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKUnderLineLabel.swift; sourceTree = "<group>"; };
+		1D8967C31C3CC5E800998655 /* MKSeparateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSeparateView.swift; sourceTree = "<group>"; };
+		1D8967C81C3CF76400998655 /* MKBaseDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseDataManager.swift; sourceTree = "<group>"; };
+		1D8967CA1C3D088500998655 /* MKRegisterDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRegisterDataManager.swift; sourceTree = "<group>"; };
+		1D8967CC1C3D0B7100998655 /* MKThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKThread.swift; sourceTree = "<group>"; };
+		1D8967CE1C3D13AD00998655 /* StringExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
+		1D8967D01C3D200700998655 /* MKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKWebViewController.swift; sourceTree = "<group>"; };
 		1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseWebService.swift; sourceTree = "<group>"; };
 		1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGlobalHeader.swift; sourceTree = "<group>"; };
 		1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseAccess.swift; sourceTree = "<group>"; };
@@ -197,6 +211,7 @@
 		1D633BBA1C216FD00068E44D /* MyKitchen */ = {
 			isa = PBXGroup;
 			children = (
+				1D8967C71C3CF75400998655 /* DataManager */,
 				1D8967BA1C3A526B00998655 /* OCCatagories */,
 				1D8967A21C3A491F00998655 /* OC3Code */,
 				1D67953F1C23E29700A37A83 /* Common */,
@@ -373,8 +388,13 @@
 			isa = PBXGroup;
 			children = (
 				1D6795411C23E48F00A37A83 /* MKEnum.swift */,
+				1D8967CE1C3D13AD00998655 /* StringExtention.swift */,
+				1D8967CC1C3D0B7100998655 /* MKThread.swift */,
 				1D8967BF1C3A9CA500998655 /* UIViewEllipse.swift */,
+				1D8967C31C3CC5E800998655 /* MKSeparateView.swift */,
 				1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */,
+				1D8967C11C3CBE5B00998655 /* MKUnderLineLabel.swift */,
+				1D8967D01C3D200700998655 /* MKWebViewController.swift */,
 				1D6795431C24048B00A37A83 /* MyKitchen-Bridging-Header.h */,
 			);
 			path = Common;
@@ -408,10 +428,19 @@
 			path = OCCatagories;
 			sourceTree = "<group>";
 		};
+		1D8967C71C3CF75400998655 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1D8967C81C3CF76400998655 /* MKBaseDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		1D8A3CBD1C2A9A8C001344B2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				1D8A3CBE1C2A9A8C001344B2 /* MKLoginManager.swift */,
+				1D8967CA1C3D088500998655 /* MKRegisterDataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -679,11 +708,14 @@
 				1D67953E1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift in Sources */,
 				1D8967B21C3A496100998655 /* MBProgressHUD.m in Sources */,
 				1D6795421C23E48F00A37A83 /* MKEnum.swift in Sources */,
+				1D8967CB1C3D088500998655 /* MKRegisterDataManager.swift in Sources */,
+				1D8967C21C3CBE5B00998655 /* MKUnderLineLabel.swift in Sources */,
 				1DC5C5731C2804C100DAACB1 /* MKFindPswDetailViewController.swift in Sources */,
 				1D6795301C229AF400A37A83 /* MKOrderViewController.swift in Sources */,
 				1D8967BD1C3A527300998655 /* NSError+WC.m in Sources */,
 				1D67953C1C22D42100A37A83 /* MKListTabBarViewController.swift in Sources */,
 				1D633BF11C2171550068E44D /* MKBaseViewController.swift in Sources */,
+				1D8967C41C3CC5E800998655 /* MKSeparateView.swift in Sources */,
 				1DA4A3A51C2CF437009599CB /* MKRegisterModel.swift in Sources */,
 				1D8A3CB61C28F267001344B2 /* MKBaseWebService.swift in Sources */,
 				1D633BEF1C2171460068E44D /* MKBaseTableViewController.swift in Sources */,
@@ -693,20 +725,24 @@
 				1D633BF31C2171720068E44D /* MKBaseCollectionViewController.swift in Sources */,
 				1D633BF81C21727D0068E44D /* MKViewControllerManager.swift in Sources */,
 				1D6795271C229A9200A37A83 /* MKHomeViewController.swift in Sources */,
+				1D8967CF1C3D13AD00998655 /* StringExtention.swift in Sources */,
 				1D67953A1C22A1FB00A37A83 /* MKLoaderViewManager.swift in Sources */,
 				1DF5F23E1C35213C0077F10F /* MKLoginModel.swift in Sources */,
 				1D6795361C229B2D00A37A83 /* MKSettingViewController.swift in Sources */,
 				1D8967B51C3A4C9900998655 /* Reachability.m in Sources */,
 				1D8A3CBF1C2A9A8C001344B2 /* MKLoginManager.swift in Sources */,
 				1DF5F23C1C3514A50077F10F /* MKCodeModel.swift in Sources */,
+				1D8967D11C3D200700998655 /* MKWebViewController.swift in Sources */,
 				1D8A3CB81C2917B1001344B2 /* MKGlobalHeader.swift in Sources */,
 				1DC5C56D1C28048B00DAACB1 /* MKLoginViewController.swift in Sources */,
 				1DC5C5711C2804AB00DAACB1 /* MKFindPswViewController.swift in Sources */,
+				1D8967C91C3CF76400998655 /* MKBaseDataManager.swift in Sources */,
 				1D8967B01C3A496100998655 /* MBProgressHUD+Add.m in Sources */,
 				1D67952D1C229AD700A37A83 /* MKCartsViewController.swift in Sources */,
 				1DC5C56F1C28049800DAACB1 /* MKRegisterViewController.swift in Sources */,
 				1D6795331C229B1000A37A83 /* MKProfileViewController.swift in Sources */,
 				1D67952A1C229ABC00A37A83 /* FileterViewController.swift in Sources */,
+				1D8967CD1C3D0B7100998655 /* MKThread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

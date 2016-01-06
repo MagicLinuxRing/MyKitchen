@@ -36,33 +36,34 @@ class MKBaseAccess: MKBaseWebService {
         return nil
     }
     
-    class func GET(urlString : String,parameters : AnyObject,action : (NSURLSessionDataTask,AnyObject?,NSError?)->()) ->NSURLSessionDataTask {
+    class func GET(urlString : String, parameters : AnyObject, action : (dataTask : NSURLSessionDataTask ,results : AnyObject? ,justError : NSError?)->()) ->NSURLSessionDataTask
+    {
         let dataTask : NSURLSessionDataTask = self.GET(urlString, parameters: parameters, successBlock: { (task, responseObject) -> () in
                 let error : NSError? = self.verifyResponseObject(responseObject!)
                 if  error != nil{
                     print(error!.localizedDescription)
                 }
-                    action(task!,responseObject,nil)
+                    action(dataTask: task!,results: responseObject,justError: nil)
             }) { (task, error) -> () in
-               action(task!,nil,error)
+               action(dataTask: task!,results: nil,justError: error)
         }!
         return dataTask
     }
-    class func POST(urlString : String,parameters : AnyObject,action : (NSURLSessionDataTask,AnyObject?,NSError?)->()) ->NSURLSessionDataTask {
+    class func POST(urlString : String,parameters : AnyObject,action : (resultTask : NSURLSessionDataTask,result : AnyObject?,justError : NSError?)->()) ->NSURLSessionDataTask {
         let dataTask : NSURLSessionDataTask = self.POST(urlString, parameters: parameters, success: { (task, responseObject) -> () in
                 let error : NSError? = self.verifyResponseObject(responseObject!)
                 if  error != nil{
                     print(error!.localizedDescription)
                 }
-            action(task!,responseObject,nil)
+            action(resultTask: task!,result: responseObject,justError: nil)
             }) { (task, error) -> () in
-                action(task!,nil,error)
+                action(resultTask: task!,result: nil,justError: error)
         }!
         return dataTask
     }
     
     class func assembleParametersWithKey(assemblyKey : String , parameters: Dictionary<String,AnyObject>) -> NSDictionary {
-        var assemblyString : NSMutableString?
+        let assemblyString = NSMutableString()
         
         var parts = [String]()
         
@@ -95,16 +96,16 @@ class MKBaseAccess: MKBaseWebService {
             }
             parts.append(part!)
         }
-        assemblyString?.appendString("{")
+        assemblyString.appendString("{")
         for var idx : NSInteger = 0 ; idx < parts.count;idx++ {
-            assemblyString?.appendString(parts[idx])
+            assemblyString.appendString(parts[idx])
             if idx != parts.count - 1{
-                assemblyString?.appendString(",")
+                assemblyString.appendString(",")
             }
         }
-        assemblyString?.appendString("}")
-        let tempKey = assemblyKey.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+        assemblyString.appendString("}")
+        let tempKey = assemblyKey.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         
-        return [tempKey! : assemblyString!]
+        return [tempKey : assemblyString]
     }
 }

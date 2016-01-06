@@ -34,7 +34,7 @@ class MKLoginViewController: MKBaseViewController {
         self.registerBtn.becomeEllopseViewWithBorderColor(RGB(236.0, G: 105.0, B: 41.0,alpha: 1.0), 1.2, 0)
         self.accountTextField.maxLength = 11
         self.passwordTextField.maxLength = 22
-        self.accountTextField.setDigitsCharts(["0","1","2","3","4","5","6","7","8","9"])
+        self.accountTextField.digitsCharts = ["0","1","2","3","4","5","6","7","8","9"]
     }
     
     

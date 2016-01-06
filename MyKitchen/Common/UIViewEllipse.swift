@@ -22,6 +22,7 @@ extension UIView{
 }
 
 internal var text_maxLength : NSInteger = 0
+private var text_digitsChars : NSInteger = 1
 
 extension UITextField{
     
@@ -36,24 +37,23 @@ extension UITextField{
         }
     }
     
-    func setDigitsCharts(digitsCharts : Array<String>){
-        objc_setAssociatedObject(self, UITextFiled_Master_digitsChars, digitsCharts, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        self.removeTarget(self, action: "MasterTextFieldChange:", forControlEvents: UIControlEvents.EditingChanged)
-        self.addTarget(self, action: "MasterTextFieldChange:", forControlEvents: UIControlEvents.EditingChanged)
+    var digitsCharts : NSArray?{
+        get{return objc_getAssociatedObject(self, &text_digitsChars) as? Array<String>}
+        set{
+            objc_setAssociatedObject(self, &text_digitsChars, digitsCharts, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.removeTarget(self, action: "MasterTextFieldChange:", forControlEvents: UIControlEvents.EditingChanged)
+            self.addTarget(self, action: "MasterTextFieldChange:", forControlEvents: UIControlEvents.EditingChanged)
+        }
     }
     
-    func digitsCharts() -> AnyObject?{
-        let charts = objc_getAssociatedObject(self, UITextFiled_Master_digitsChars)
-        return charts
-    }
-    
+
     func MasterTextFieldChange(textField : UITextField){
-        if textField.markedTextRange == nil && self.digitsCharts() != nil && self.digitsCharts()!.count > 0{
+        if textField.markedTextRange == nil && self.digitsCharts != nil && self.digitsCharts!.count > 0{
             var newString : NSMutableString?
             for var i = 0 ;i < textField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding);i++
             {
                 let str = (textField.text! as NSString).substringWithRange(NSMakeRange(i, 1))
-                if self.digitsCharts()!.containsObject(str){
+                if self.digitsCharts!.containsObject(str){
                     newString?.appendString(str)
                 }
                 textField.text? = newString! as String
