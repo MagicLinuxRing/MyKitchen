@@ -52,6 +52,7 @@
 		1D8967CD1C3D0B7100998655 /* MKThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967CC1C3D0B7100998655 /* MKThread.swift */; };
 		1D8967CF1C3D13AD00998655 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967CE1C3D13AD00998655 /* StringExtention.swift */; };
 		1D8967D11C3D200700998655 /* MKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8967D01C3D200700998655 /* MKWebViewController.swift */; };
+		1D8967D31C3E0BB600998655 /* wochu_use_agreement.htm in Resources */ = {isa = PBXBuildFile; fileRef = 1D8967D21C3E0BB600998655 /* wochu_use_agreement.htm */; };
 		1D8A3CB61C28F267001344B2 /* MKBaseWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */; };
 		1D8A3CB81C2917B1001344B2 /* MKGlobalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */; };
 		1D8A3CBA1C2956D7001344B2 /* MKBaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */; };
@@ -144,6 +145,7 @@
 		1D8967CC1C3D0B7100998655 /* MKThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKThread.swift; sourceTree = "<group>"; };
 		1D8967CE1C3D13AD00998655 /* StringExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		1D8967D01C3D200700998655 /* MKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKWebViewController.swift; sourceTree = "<group>"; };
+		1D8967D21C3E0BB600998655 /* wochu_use_agreement.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = wochu_use_agreement.htm; sourceTree = "<group>"; };
 		1D8A3CB51C28F267001344B2 /* MKBaseWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseWebService.swift; sourceTree = "<group>"; };
 		1D8A3CB71C2917B1001344B2 /* MKGlobalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGlobalHeader.swift; sourceTree = "<group>"; };
 		1D8A3CB91C2956D7001344B2 /* MKBaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBaseAccess.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				1D633BBF1C216FD00068E44D /* Main.storyboard */,
 				1D633BC21C216FD00068E44D /* Assets.xcassets */,
 				1D633BC41C216FD00068E44D /* LaunchScreen.storyboard */,
+				1D8967D21C3E0BB600998655 /* wochu_use_agreement.htm */,
 				1D633BC71C216FD00068E44D /* Info.plist */,
 			);
 			path = MyKitchen;
@@ -627,6 +630,7 @@
 				1D633BC11C216FD00068E44D /* Main.storyboard in Resources */,
 				1D6795181C2297B700A37A83 /* Order.storyboard in Resources */,
 				1D8967A91C3A495000998655 /* RSProgressHUD.bundle in Resources */,
+				1D8967D31C3E0BB600998655 /* wochu_use_agreement.htm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

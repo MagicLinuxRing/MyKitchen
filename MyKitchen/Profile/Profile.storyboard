@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nj9-4D-PNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671.5" y="-1495.5"/>
+            <point key="canvasLocation" x="1265.5" y="-1483.5"/>
         </scene>
         <!--找回密码-->
         <scene sceneID="RIu-LL-X6I">
@@ -382,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0M-dt-Dcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2216.5" y="-1193.5"/>
+            <point key="canvasLocation" x="1810.5" y="-1181.5"/>
         </scene>
         <!--找回密码-->
         <scene sceneID="00N-cF-HIf">
@@ -698,6 +698,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="mzq-Ml-8RH" appends="YES" id="ZMS-gg-dXq"/>
+                                        </connections>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -749,7 +752,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2229.5" y="-2019.5"/>
+            <point key="canvasLocation" x="1823.5" y="-2007.5"/>
         </scene>
         <!--Base Nav View Controller-->
         <scene sceneID="9KQ-Cn-rkn">
@@ -768,7 +771,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1K-cy-SN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150.5" y="-1495.5"/>
+            <point key="canvasLocation" x="744.5" y="-1483.5"/>
         </scene>
     </scenes>
 </document>

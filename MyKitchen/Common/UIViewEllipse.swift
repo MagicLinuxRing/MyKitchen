@@ -49,14 +49,14 @@ extension UITextField{
 
     func MasterTextFieldChange(textField : UITextField){
         if textField.markedTextRange == nil && self.digitsCharts != nil && self.digitsCharts!.count > 0{
-            var newString : NSMutableString?
+            let newString = NSMutableString()
             for var i = 0 ;i < textField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding);i++
             {
                 let str = (textField.text! as NSString).substringWithRange(NSMakeRange(i, 1))
                 if self.digitsCharts!.containsObject(str){
-                    newString?.appendString(str)
+                    newString.appendString(str)
                 }
-                textField.text? = newString! as String
+                textField.text? = newString as String
             }
         }
         

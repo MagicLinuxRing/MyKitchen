@@ -84,9 +84,12 @@ class MKRegisterViewController: MKBaseViewController,UITextFieldDelegate {
     
     @IBAction func tapClick(sender: AnyObject) {
         let resourcePath = NSBundle.mainBundle().resourcePath
-        let filePath = resourcePath?.stringByAppendingString("/wochu_use_agreement.htm")
-        let url = NSURL.fileURLWithPath(filePath!)
-        
+        let filePath = (resourcePath! as NSString).stringByAppendingPathComponent("wochu_use_agreement.htm")
+        let url = NSURL.fileURLWithPath(filePath)
+        let webVC = MKWebViewController()
+        webVC.setTargetUrl(url)
+        webVC.setTargetVCTitle("协议")
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
     
     @IBAction func doRegisterAndLoginAction(sender: AnyObject) {
