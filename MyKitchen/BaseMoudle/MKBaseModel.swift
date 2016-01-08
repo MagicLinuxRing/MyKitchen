@@ -17,4 +17,13 @@ class MKBaseModel: MKObject {
         return ["ID":"id"]
     }
     
+    override init() {
+        super.init()
+    }
+    
+    required init(id : Int64) {
+        super.init()
+        self.ID = id
+    }
+    
 }

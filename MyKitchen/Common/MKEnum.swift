@@ -33,6 +33,17 @@ public enum MKOrderStatus : NSInteger{
     case MKOrderStatusPayOnDeliverUnReceipt = 12 // 待收货 货到付款
 }
 
+public enum MKOrderActionType : NSInteger{
+    case MKOrderActionTypeCancel = 101
+    case MKOrderActionTypePaid //付款
+    case MKOrderActionTypeReceipt//确认收货
+    case MKOrderActionTypeLogistics//查看物流
+    case MKOrderActionTypeAppraise//评价
+    case MKOrderActionTypeRestore//售后
+    case MKOrderActionTypeRestoreProgress//售后进度
+    case MKOrderActionTypeUnknow
+}
+
 public enum MKErrorCode : Int{
     case RemindErrorCode = -10000 // 提醒错误
     case ServiceErrorCode = -10001 // 服务器错误
