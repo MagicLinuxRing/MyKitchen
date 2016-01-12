@@ -21,7 +21,7 @@ class MKBaseGoods: MKBaseModel {
     var icon = ""
     var picUrl = ""
     var isCheck = false
-    var action : Dictionary<String,AnyObject>?
+    var action = Dictionary<String,AnyObject>()
     var realPrice : CGFloat = 0.0
     var price : CGFloat = 0.0
     var marketPrice : CGFloat = 0.0
@@ -36,8 +36,7 @@ class MKBaseGoods: MKBaseModel {
     var status : NSInteger = 0
     var Virtual : Bool =  false
     var salableStock : Bool = false
-    var googdsAttributeImg : Array<AnyObject>?
-    
+    var googdsAttributeImg = Array<AnyObject>()
     
     required init(id: Int64) {
         super.init(id: id)

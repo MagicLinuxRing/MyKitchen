@@ -9,8 +9,8 @@
 import UIKit
 
 class MKBaseModel: MKObject {
-    internal var ID : Int64? = 0
-    internal var count : Int64? = 0
+    internal var ID : Int64?
+    internal var count : Int64 = 0
     internal var enabled : Bool = true
     
     class func replaceKeyFromPropertyName() ->[String : String] {

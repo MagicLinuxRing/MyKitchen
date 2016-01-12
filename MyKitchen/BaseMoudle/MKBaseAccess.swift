@@ -36,7 +36,7 @@ class MKBaseAccess: MKBaseWebService {
         return nil
     }
     
-    class func GET(urlString : String, parameters : AnyObject, action : (dataTask : NSURLSessionDataTask ,results : AnyObject? ,justError : NSError?)->()) ->NSURLSessionDataTask
+    class func GET(urlString : String, parameters : AnyObject?, action : (dataTask : NSURLSessionDataTask ,results : AnyObject? ,justError : NSError?)->()) ->NSURLSessionDataTask
     {
         let dataTask : NSURLSessionDataTask = self.GET(urlString, parameters: parameters, successBlock: { (task, responseObject) -> () in
                 let error : NSError? = self.verifyResponseObject(responseObject!)
@@ -62,15 +62,15 @@ class MKBaseAccess: MKBaseWebService {
         return dataTask
     }
     
-    class func assembleParametersWithKey(assemblyKey : String , parameters: Dictionary<String,AnyObject>) -> NSDictionary {
+    class func assembleParametersWithKey(assemblyKey : String , parameters: [String : Any]) -> [String : AnyObject] {
         let assemblyString = NSMutableString()
         
         var parts = [String]()
         
         for key in parameters.keys{
             var encodedValue = parameters[key]
-            if encodedValue is NSDictionary{
-                encodedValue = try? NSJSONSerialization.dataWithJSONObject(encodedValue!, options: .PrettyPrinted)
+            if encodedValue is [String : Any]{
+                encodedValue = try? NSJSONSerialization.dataWithJSONObject(encodedValue as! [String : AnyObject], options: .PrettyPrinted)
                  let tempString = String(data: encodedValue as! NSData, encoding: NSUTF8StringEncoding)?.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
                 encodedValue = tempString?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 ? tempString : encodedValue
             }
@@ -81,7 +81,7 @@ class MKBaseAccess: MKBaseWebService {
                 encodedValue = (tempString?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) ?  tempString : encodedValue
             }
             else if encodedValue is NSArray{
-                encodedValue = try? NSJSONSerialization.dataWithJSONObject(encodedValue!, options: .PrettyPrinted)
+                encodedValue = try? NSJSONSerialization.dataWithJSONObject(encodedValue as! [String : AnyObject], options: .PrettyPrinted)
                 let tempString = String(data: encodedValue as! NSData, encoding: NSUTF8StringEncoding)?.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
                 encodedValue = (tempString?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) ?  tempString : encodedValue
             }

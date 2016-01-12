@@ -39,9 +39,9 @@ class MKLoginManager: MKBaseAccess {
     
     //注册获取验证码
     class func getRegisterVerifyCode(phoneNaumber : String,action : MKRegisterAction?){
-        var dict = Dictionary<String,AnyObject>()
+        var dict = Dictionary<String,Any>()
         dict["mobile"] = phoneNaumber
-        let paraneters = self.assembleParametersWithKey("parameters", parameters: dict)
+        let paraneters = self.assembleParametersWithKey("parameters", parameters: dict) 
         self .GET(self.assembleURLString("member/sendSMS"), parameters: paraneters) { (task :NSURLSessionDataTask,responseObject : AnyObject?,error : NSError?) -> () in
             if error != nil{
                 return action!(registerModel: nil,error: error!)
@@ -139,7 +139,7 @@ class MKLoginManager: MKBaseAccess {
     
     //检验账户是否存在
     class func getMemberNameIsExists(account : String,_ action : MKSuccessNoResultAction) {
-        var dict = Dictionary<String,AnyObject>()
+        var dict = Dictionary<String,Any>()
         dict["account"] = account
         let parameter = self.assembleParametersWithKey("parameters", parameters: dict)
         

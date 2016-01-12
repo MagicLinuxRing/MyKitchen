@@ -35,7 +35,7 @@ class MKBaseWebService: MKObject {
         set{_HTTPRequestSerializer = newValue}
     }
     
-    required init() {
+    required override init() {
         _manager = AFHTTPSessionManager(baseURL: NSURL(string: MKBaseConnectorAddress), sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
         _manager?.requestSerializer = AFJSONRequestSerializer(writingOptions: .PrettyPrinted)
         _manager?.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript", "text/html") as? Set<String>

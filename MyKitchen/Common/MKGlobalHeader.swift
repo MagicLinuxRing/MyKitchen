@@ -49,7 +49,7 @@ class MKGlobalHeader : MKObject{
         return globalHeader.instance!
     }
     
-    required init() {
+    required override init() {
         self.placeholderImage = UIImage(named: "image_placeholder")
         self.placeholderWidthImage = UIImage(named: "image_placeWidthOlder")
         self.defalutImage = UIImage(named: "image_defaultImage")

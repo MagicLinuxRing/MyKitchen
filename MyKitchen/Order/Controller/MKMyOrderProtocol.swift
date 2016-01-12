@@ -11,5 +11,6 @@ import Foundation
 protocol MKMyOrderViewControllerDelegate{
     func myOrderChangeWithNumber(orderNumber : NSNumber)
     func myOrderViewController(myOrderViewController : MKOrderViewController)
-    func myOrderViewController(orderViewCtr : MKOrderViewController,orderActionType : MKOrderActionType)
+    func myOrderViewController(orderViewCtr : MKOrderViewController,orderActionType : MKOrderActionType,order : MKBaseOrder)
+    func myOrderViewController(myOrderViewCtr : MKOrderViewController, didPressedSingleRestore : MKRestoreGoods)
 }

@@ -54,39 +54,61 @@ public enum MKOrderType : NSInteger{
     case Recharge//网上充值订单
 }
 
+public enum MKChangeShippingTimeStatus : NSInteger{
+    case Approving = 0//审核中
+    case Approved//审核通过
+    case UnApproved//审核不通过
+}
+
 
 class MKBaseOrder: MKBaseModel {
 
     var orderId : Int64? //订单ID
-    var orderSn : String?//订单号
+    var orderSn = ""//订单号
     var status : MKOrderStatus?//订单状态，用于订单列表
     var orderStatus : MKOrderStatus?//未用到
     var canRestoreOrder : NSInteger?//是否可以整单退款
     var restoreOrderStatus : MKRestoreOrderStatus?// 整单退货生贺状态
-    var orderAmount : CGFloat?//订单总金额
-    var needToPay : CGFloat?//需要支付的金额
-    var moneyPaid : CGFloat?//实付金额
-    var orderDetail : Array<AnyObject>?//订单商品信息
-    var shippingFee : CGFloat?//运费
+    var orderAmount : CGFloat = 0.0//订单总金额
+    var needToPay : CGFloat = 0.0//需要支付的金额
+    var moneyPaid : CGFloat = 0.0//实付金额
+    var orderDetail : [MKOrderGoods] = []//订单商品信息
+    var shippingFee : CGFloat = 0.0//运费
     var shippingStatus :MKShippingStatus?//发货状态
-    var shippingId : NSInteger?//配送方式
+    var shippingId : NSInteger = 0//配送方式
     var shippingName : String?//配送方式名称
-    private var _payId : MKPayType?
-    var payId : MKPayType?{
+    private var _payId : MKPayType = .AliPay
+    internal var payId : MKPayType{
         get {return _payId}
         set {
             _payId = newValue
+            switch newValue{
+                case .AliPay:
+                    self.payName = "支付宝"
+                    break
+                case .WeiXinPay:
+                    self.payName = "微信支付"
+                break
+                case .JianHang:
+                    self.payName = "建行支付"
+                break
+                case .CashOnDelivery:
+                    self.payName = "货到付款"
+                break
+                default:
+                    break
+            }
         }
     }//支付方式
-    var payName : String?//支付方式名称
+    var payName : String = ""//支付方式名称
     var payStatus : MKPayStatus?//付款状态
-    var payNote : String?//支付备注
-    var isCancel : Bool?
-    var cancelId : String?
+    var payNote : String = ""//支付备注
+    var isCancel : Bool = false
+    var cancelId : String = ""
     var cancelOrderStatus : MKCancelOrderStatus?//取消订单状态
     var orderType : MKOrderType?//订单类型
     
-    var availableStatus : Array<AnyObject>?
+    var availableStatus : [AnyObject] = []
     
     required init(id: Int64) {
         super.init(id: id)
@@ -97,14 +119,16 @@ class MKBaseOrder: MKBaseModel {
     }
     
     func updateGoodsOrderSn(){
-        if self.orderSn?.length == 0{
+        if self.orderSn.length == 0{
             return
         }
-        
+        for var goods in self.orderDetail {
+            goods.orderSn = self.orderSn
+        }
     }
     
     class func objectClassInArray() ->Dictionary<String,AnyObject> {
-        return ["orderDetail" : "","availableStatus":""]
+        return ["orderDetail" : MKOrderGoods.self,"availableStatus":MKOrderStatusModel.self]
     }
 }
 

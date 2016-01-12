@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D258E8D1C434FB30015EA93 /* MKRestoreGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E8C1C434FB30015EA93 /* MKRestoreGoods.swift */; };
+		1D258E8F1C4380C50015EA93 /* MKMyOrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E8E1C4380C50015EA93 /* MKMyOrderManager.swift */; };
+		1D258E911C4381650015EA93 /* MKOrderAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E901C4381650015EA93 /* MKOrderAccess.swift */; };
+		1D258E931C43831D0015EA93 /* MKOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E921C43831D0015EA93 /* MKOrder.swift */; };
+		1D258E951C4385B60015EA93 /* MKOrderChangeDeliver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E941C4385B60015EA93 /* MKOrderChangeDeliver.swift */; };
+		1D258E971C4389950015EA93 /* MKOrderGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E961C4389950015EA93 /* MKOrderGoods.swift */; };
+		1D258E991C438A090015EA93 /* MKGoodsExceptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E981C438A090015EA93 /* MKGoodsExceptionData.swift */; };
+		1D258E9D1C438EC30015EA93 /* MKOrderPromotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E9C1C438EC30015EA93 /* MKOrderPromotion.swift */; };
+		1D258E9F1C43AD760015EA93 /* MKAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258E9E1C43AD760015EA93 /* MKAddress.swift */; };
+		1D258EA11C43B09D0015EA93 /* MKOrderConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258EA01C43B09D0015EA93 /* MKOrderConfirm.swift */; };
+		1D258EA31C43B0E10015EA93 /* MKShippingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258EA21C43B0E10015EA93 /* MKShippingTime.swift */; };
+		1D258EA51C44AE4B0015EA93 /* MKStringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258EA41C44AE4B0015EA93 /* MKStringExtention.swift */; };
+		1D258EAA1C44D2BE0015EA93 /* MKDictionaryExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D258EA91C44D2BD0015EA93 /* MKDictionaryExtention.swift */; };
 		1D633BBC1C216FD00068E44D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D633BBB1C216FD00068E44D /* AppDelegate.swift */; };
 		1D633BC11C216FD00068E44D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D633BBF1C216FD00068E44D /* Main.storyboard */; };
 		1D633BC31C216FD00068E44D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D633BC21C216FD00068E44D /* Assets.xcassets */; };
@@ -91,6 +104,19 @@
 
 /* Begin PBXFileReference section */
 		01E031E36EF425C5546E46AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1D258E8C1C434FB30015EA93 /* MKRestoreGoods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRestoreGoods.swift; sourceTree = "<group>"; };
+		1D258E8E1C4380C50015EA93 /* MKMyOrderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMyOrderManager.swift; sourceTree = "<group>"; };
+		1D258E901C4381650015EA93 /* MKOrderAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKOrderAccess.swift; sourceTree = "<group>"; };
+		1D258E921C43831D0015EA93 /* MKOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKOrder.swift; sourceTree = "<group>"; };
+		1D258E941C4385B60015EA93 /* MKOrderChangeDeliver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKOrderChangeDeliver.swift; sourceTree = "<group>"; };
+		1D258E961C4389950015EA93 /* MKOrderGoods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKOrderGoods.swift; sourceTree = "<group>"; };
+		1D258E981C438A090015EA93 /* MKGoodsExceptionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGoodsExceptionData.swift; sourceTree = "<group>"; };
+		1D258E9C1C438EC30015EA93 /* MKOrderPromotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKOrderPromotion.swift; sourceTree = "<group>"; };
+		1D258E9E1C43AD760015EA93 /* MKAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKAddress.swift; sourceTree = "<group>"; };
+		1D258EA01C43B09D0015EA93 /* MKOrderConfirm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKOrderConfirm.swift; sourceTree = "<group>"; };
+		1D258EA21C43B0E10015EA93 /* MKShippingTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKShippingTime.swift; sourceTree = "<group>"; };
+		1D258EA41C44AE4B0015EA93 /* MKStringExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKStringExtention.swift; sourceTree = "<group>"; };
+		1D258EA91C44D2BD0015EA93 /* MKDictionaryExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKDictionaryExtention.swift; sourceTree = "<group>"; };
 		1D633BB81C216FD00068E44D /* MyKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D633BBB1C216FD00068E44D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D633BC01C216FD00068E44D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -404,6 +430,8 @@
 			isa = PBXGroup;
 			children = (
 				1D6795411C23E48F00A37A83 /* MKEnum.swift */,
+				1D258EA41C44AE4B0015EA93 /* MKStringExtention.swift */,
+				1D258EA91C44D2BD0015EA93 /* MKDictionaryExtention.swift */,
 				1D8967CE1C3D13AD00998655 /* StringExtention.swift */,
 				1D8967CC1C3D0B7100998655 /* MKThread.swift */,
 				1D8967BF1C3A9CA500998655 /* UIViewEllipse.swift */,
@@ -456,7 +484,16 @@
 			isa = PBXGroup;
 			children = (
 				1D8967DE1C3F9EDD00998655 /* MKBaseOrder.swift */,
+				1D258E921C43831D0015EA93 /* MKOrder.swift */,
+				1D258EA01C43B09D0015EA93 /* MKOrderConfirm.swift */,
 				1D8967E01C3FCDB200998655 /* MKBaseGoods.swift */,
+				1D258EA21C43B0E10015EA93 /* MKShippingTime.swift */,
+				1D258E8C1C434FB30015EA93 /* MKRestoreGoods.swift */,
+				1D258E961C4389950015EA93 /* MKOrderGoods.swift */,
+				1D258E981C438A090015EA93 /* MKGoodsExceptionData.swift */,
+				1D258E941C4385B60015EA93 /* MKOrderChangeDeliver.swift */,
+				1D258E9C1C438EC30015EA93 /* MKOrderPromotion.swift */,
+				1D258E9E1C43AD760015EA93 /* MKAddress.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +508,8 @@
 		1D8967DD1C3F9E9300998655 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				1D258E8E1C4380C50015EA93 /* MKMyOrderManager.swift */,
+				1D258E901C4381650015EA93 /* MKOrderAccess.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -746,16 +785,24 @@
 				1D633BBC1C216FD00068E44D /* AppDelegate.swift in Sources */,
 				1D8967AA1C3A495000998655 /* RSProgressHUD.m in Sources */,
 				1D67953E1C23E25300A37A83 /* MKMyOrderTabBarViewController.swift in Sources */,
+				1D258EA51C44AE4B0015EA93 /* MKStringExtention.swift in Sources */,
 				1D8967B21C3A496100998655 /* MBProgressHUD.m in Sources */,
 				1D6795421C23E48F00A37A83 /* MKEnum.swift in Sources */,
+				1D258E971C4389950015EA93 /* MKOrderGoods.swift in Sources */,
 				1D8967CB1C3D088500998655 /* MKRegisterDataManager.swift in Sources */,
 				1D8967C21C3CBE5B00998655 /* MKUnderLineLabel.swift in Sources */,
 				1D8967E11C3FCDB200998655 /* MKBaseGoods.swift in Sources */,
+				1D258E931C43831D0015EA93 /* MKOrder.swift in Sources */,
 				1DC5C5731C2804C100DAACB1 /* MKFindPswDetailViewController.swift in Sources */,
+				1D258E991C438A090015EA93 /* MKGoodsExceptionData.swift in Sources */,
 				1D6795301C229AF400A37A83 /* MKOrderViewController.swift in Sources */,
+				1D258EA11C43B09D0015EA93 /* MKOrderConfirm.swift in Sources */,
+				1D258EA31C43B0E10015EA93 /* MKShippingTime.swift in Sources */,
 				1D8967BD1C3A527300998655 /* NSError+WC.m in Sources */,
 				1D67953C1C22D42100A37A83 /* MKListTabBarViewController.swift in Sources */,
 				1D633BF11C2171550068E44D /* MKBaseViewController.swift in Sources */,
+				1D258E9D1C438EC30015EA93 /* MKOrderPromotion.swift in Sources */,
+				1D258E911C4381650015EA93 /* MKOrderAccess.swift in Sources */,
 				1D8967C41C3CC5E800998655 /* MKSeparateView.swift in Sources */,
 				1DA4A3A51C2CF437009599CB /* MKRegisterModel.swift in Sources */,
 				1D8A3CB61C28F267001344B2 /* MKBaseWebService.swift in Sources */,
@@ -763,9 +810,11 @@
 				1D8A3CC11C2A9DEE001344B2 /* MKBaseModel.swift in Sources */,
 				1D8967C01C3A9CA500998655 /* UIViewEllipse.swift in Sources */,
 				1D633BED1C2171320068E44D /* MKBaseNavViewController.swift in Sources */,
+				1D258E8D1C434FB30015EA93 /* MKRestoreGoods.swift in Sources */,
 				1D633BF31C2171720068E44D /* MKBaseCollectionViewController.swift in Sources */,
 				1D633BF81C21727D0068E44D /* MKViewControllerManager.swift in Sources */,
 				1D6795271C229A9200A37A83 /* MKHomeViewController.swift in Sources */,
+				1D258E8F1C4380C50015EA93 /* MKMyOrderManager.swift in Sources */,
 				1D8967DA1C3F9C9D00998655 /* MKMyOrderProtocol.swift in Sources */,
 				1D8967D51C3E36B300998655 /* UIViewControllerExtention.swift in Sources */,
 				1D8967CF1C3D13AD00998655 /* StringExtention.swift in Sources */,
@@ -775,13 +824,16 @@
 				1D8967B51C3A4C9900998655 /* Reachability.m in Sources */,
 				1D8A3CBF1C2A9A8C001344B2 /* MKLoginManager.swift in Sources */,
 				1DF5F23C1C3514A50077F10F /* MKCodeModel.swift in Sources */,
+				1D258E951C4385B60015EA93 /* MKOrderChangeDeliver.swift in Sources */,
 				1D8967D11C3D200700998655 /* MKWebViewController.swift in Sources */,
+				1D258EAA1C44D2BE0015EA93 /* MKDictionaryExtention.swift in Sources */,
 				1D8A3CB81C2917B1001344B2 /* MKGlobalHeader.swift in Sources */,
 				1DC5C56D1C28048B00DAACB1 /* MKLoginViewController.swift in Sources */,
 				1DC5C5711C2804AB00DAACB1 /* MKFindPswViewController.swift in Sources */,
 				1D8967C91C3CF76400998655 /* MKBaseDataManager.swift in Sources */,
 				1D8967B01C3A496100998655 /* MBProgressHUD+Add.m in Sources */,
 				1D67952D1C229AD700A37A83 /* MKCartsViewController.swift in Sources */,
+				1D258E9F1C43AD760015EA93 /* MKAddress.swift in Sources */,
 				1DC5C56F1C28049800DAACB1 /* MKRegisterViewController.swift in Sources */,
 				1D6795331C229B1000A37A83 /* MKProfileViewController.swift in Sources */,
 				1D8967DF1C3F9EDD00998655 /* MKBaseOrder.swift in Sources */,

@@ -9,7 +9,12 @@
 import UIKit
 
 class MKOrderViewController: MKBaseTableViewController {
+    
+    internal var orderStatus : MKOrderStatus?
+    internal var order : MKBaseOrder?
 
+    internal var delegate : MKMyOrderViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor();
@@ -20,6 +25,10 @@ class MKOrderViewController: MKBaseTableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setTargetOrderStatusType(orderType : MKOrderStatus){
+        
     }
     
 
