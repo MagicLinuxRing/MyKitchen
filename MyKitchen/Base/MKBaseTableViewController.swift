@@ -9,6 +9,10 @@
 import UIKit
 
 class MKBaseTableViewController: UITableViewController {
+    
+    var page : NSInteger = 0
+    var appGlobal : MKGlobalHeader?
+    var emptyView : UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()

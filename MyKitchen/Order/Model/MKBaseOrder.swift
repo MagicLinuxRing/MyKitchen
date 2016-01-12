@@ -122,7 +122,7 @@ class MKBaseOrder: MKBaseModel {
         if self.orderSn.length == 0{
             return
         }
-        for var goods in self.orderDetail {
+        for goods in self.orderDetail {
             goods.orderSn = self.orderSn
         }
     }

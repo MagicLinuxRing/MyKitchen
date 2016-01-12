@@ -22,15 +22,15 @@ func URLBASE() -> String{
 
 class MKGlobalHeader : MKObject{
     
-    var placeholderImage : UIImage?
-    var placeholderWidthImage : UIImage?
-    var defalutImage : UIImage?
-    var userImage : UIImage?
-    var backgroundColor : UIColor?
-    var grayColor : UIColor?
-    var originColor : UIColor?
-    var greenColor : UIColor?
-    var grayFontColor : UIColor?
+    var placeholderImage = UIImage(named: "image_placeholder")
+    var placeholderWidthImage = UIImage(named: "image_placeWidthOlder")
+    var defalutImage = UIImage(named: "image_defaultImage")
+    var userImage = UIImage(named: "center_image_user")
+    var backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0)
+    var grayColor = UIColor(white: 100.0/255.0, alpha: 0.2)
+    var originColor = RGB(236.0, G: 105.0, B: 41.0, alpha: 1.0)
+    var greenColor = RGB(85, G: 186, B: 66, alpha: 1.0)
+    var grayFontColor = RGB(102, G: 102, B: 102, alpha: 1.0)
     
     var appConfig : AnyObject?
     var loginInfo : AnyObject?
@@ -50,15 +50,6 @@ class MKGlobalHeader : MKObject{
     }
     
     required override init() {
-        self.placeholderImage = UIImage(named: "image_placeholder")
-        self.placeholderWidthImage = UIImage(named: "image_placeWidthOlder")
-        self.defalutImage = UIImage(named: "image_defaultImage")
-        self.userImage = UIImage(named: "center_image_user")
-        self.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0)
-        self.grayColor = UIColor(white: 100.0/255.0, alpha: 0.2)
-        self.originColor = RGB(236.0, G: 105.0, B: 41.0, alpha: 1.0)
-        self.greenColor = RGB(85, G: 186, B: 66, alpha: 1.0)
-        self.grayFontColor = RGB(102, G: 102, B: 102, alpha: 1.0)
         super.init()
     }
     

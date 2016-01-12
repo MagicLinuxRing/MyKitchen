@@ -254,13 +254,13 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="viewModel" destination="Qgc-GH-rc8" id="XSv-Hd-GvW"/>
+                        <outlet property="orderDataManager" destination="Qgc-GH-rc8" id="DSX-BW-ojD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZo-ec-RLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="Qgc-GH-rc8" customClass="WCMyOrderViewModel"/>
+                <customObject id="Qgc-GH-rc8" customClass="MKMyOrderManager" customModule="MyKitchen" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="200" y="-726"/>
+            <point key="canvasLocation" x="14" y="-815"/>
         </scene>
     </scenes>
 </document>

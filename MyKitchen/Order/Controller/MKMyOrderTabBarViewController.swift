@@ -8,9 +8,7 @@
 
 import UIKit
 
-class MKMyOrderTabBarViewController: MKListTabBarViewController,MKListTabBarControllerDelegate {
-
-    var orderStatus : MKOrderStatus?
+class MKMyOrderTabBarViewController: MKListTabBarViewController,MKListTabBarControllerDelegate,MKMyOrderViewControllerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,8 +25,9 @@ class MKMyOrderTabBarViewController: MKListTabBarViewController,MKListTabBarCont
         for var index = 0; index < titles.count; index++ {
             let orderVC : MKOrderViewController = MKLoaderViewManager.myOrderViewController()
             orderVC.title = titles[index]
-            //            orderVC.setTargetOrderStatusType(index)
-            //            orderVC.delegate = self
+            let status = MKOrderStatus(rawValue: index)
+            orderVC.setTargetOrderStatusType(status!)
+            orderVC.delegate = self
             vcSlice.append(orderVC)
         }
         self.delegate = self
